@@ -5,12 +5,14 @@ import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTim
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-storage.js";
 
 const firebaseConfig = {
-  apiKey: "COLE_SUA_API_KEY",
-  authDomain: "SEU_PROJETO.firebaseapp.com",
-  projectId: "SEU_PROJECT_ID",
-  storageBucket: "SEU_PROJECT_ID.firebasestorage.app",
-  messagingSenderId: "SEU_SENDER_ID",
-  appId: "SEU_APP_ID"
+  apiKey: "AIzaSyC4CccsFRsOEkEknvASp2OFeaUM15w_VMI",
+  authDomain: "oficina-do-celular-73a69.firebaseapp.com",
+  databaseURL: "https://oficina-do-celular-73a69-default-rtdb.firebaseio.com",
+  projectId: "oficina-do-celular-73a69",
+  storageBucket: "oficina-do-celular-73a69.firebasestorage.app",
+  messagingSenderId: "737244059599",
+  appId: "1:737244059599:web:6baf998f0eccc168a864ba",
+  measurementId: "G-KQCV93PPVS"
 };
 
 const configured = !firebaseConfig.apiKey.startsWith("COLE_");
