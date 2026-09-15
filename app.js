@@ -5,13 +5,18 @@ import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTim
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-storage.js";
 
 const firebaseConfig = {
-  apiKey: "COLE_SUA_API_KEY",
-  authDomain: "SEU_PROJETO.firebaseapp.com",
-  projectId: "SEU_PROJECT_ID",
-  storageBucket: "SEU_PROJECT_ID.firebasestorage.app",
-  messagingSenderId: "SEU_SENDER_ID",
-  appId: "SEU_APP_ID"
+  apiKey: "AIzaSyCzUSPmNqX1QiNZYbQ_BDJJ12XdATcQ6uM",
+  authDomain: "cha-de-casa-nova-tayna-jean.firebaseapp.com",
+  projectId: "cha-de-casa-nova-tayna-jean",
+  storageBucket: "cha-de-casa-nova-tayna-jean.firebasestorage.app",
+  messagingSenderId: "1037404104306",
+  appId: "1:1037404104306:web:d107bc2c72892cd83884eb",
+  measurementId: "G-0HVMMEEX8V"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 const configured = !firebaseConfig.apiKey.startsWith("COLE_");
 let db, storage;
