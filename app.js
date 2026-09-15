@@ -10,8 +10,8 @@ const firebaseConfig = {
   projectId: "cha-de-casa-nova-tayna-jean",
   storageBucket: "cha-de-casa-nova-tayna-jean.firebasestorage.app",
   messagingSenderId: "1037404104306",
-  appId: "1:1037404104306:web:d107bc2c72892cd83884eb",
-  measurementId: "G-0HVMMEEX8V"
+  appId: "1:1037404104306:web:3f4fc49700cfc4b23884eb",
+  measurementId: "G-Z6K343JRJ8"
 };
 
 // Initialize Firebase
