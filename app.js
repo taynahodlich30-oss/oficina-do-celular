@@ -12,10 +12,10 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyC4CccsFRsOEkEknvASp2OFeaUM15w_VMI",
   authDomain: "oficina-do-celular-73a69.firebaseapp.com",
+  databaseURL: "https://oficina-do-celular-73a69-default-rtdb.firebaseio.com",
   projectId: "oficina-do-celular-73a69",
   storageBucket: "oficina-do-celular-73a69.firebasestorage.app",
   messagingSenderId: "737244059599",
