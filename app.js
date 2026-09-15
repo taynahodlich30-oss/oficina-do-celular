@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
 import {
   getFirestore,
   collection,
@@ -22,21 +23,81 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-console.log("Firebase conectado:", firebaseConfig.projectId);
+console.log("Oficina do Celular - Firebase conectado");
 
-// Teste de gravação
-async function testarFirestore() {
-  try {
-    const docRef = await addDoc(collection(db, "ordens"), {
-      teste: true,
-      oficina: "Oficina do Celular",
+const form = document.querySelector("#osForm");
+const lista = document.querySelector("#listaOS");
+
+if (form) {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const dados = new FormData(form);
+
+    const ordem = {
+      cliente: dados.get("cliente") || "",
+      whatsapp: dados.get("whatsapp") || "",
+      aparelho: dados.get("aparelho") || "",
+      imei: dados.get("imei") || "",
+      defeito: dados.get("defeito") || "",
+      observacoes: dados.get("observacoes") || "",
+      valor: dados.get("valor") || "",
+      status: "Recebido",
       criadoEm: serverTimestamp()
-    });
+    };
 
-    console.log("Firestore funcionando! ID:", docRef.id);
-  } catch (erro) {
-    console.error("ERRO AO GRAVAR NO FIRESTORE:", erro);
-  }
+    try {
+      const documento = await addDoc(
+        collection(db, "ordens"),
+        ordem
+      );
+
+      alert("Ordem de serviço criada com sucesso!");
+
+      form.reset();
+
+      console.log("OS criada:", documento.id);
+
+    } catch (erro) {
+      console.error("Erro ao criar OS:", erro);
+
+      alert(
+        "Não foi possível salvar a ordem. Verifique a conexão com o Firebase."
+      );
+    }
+  });
 }
 
-testarFirestore();
+if (lista) {
+  const consulta = query(
+    collection(db, "ordens"),
+    orderBy("criadoEm", "desc")
+  );
+
+  onSnapshot(
+    consulta,
+    (snapshot) => {
+      lista.innerHTML = "";
+
+      snapshot.forEach((doc) => {
+        const os = doc.data();
+
+        const item = document.createElement("div");
+
+        item.className = "ordem";
+
+        item.innerHTML = `
+          <strong>${os.cliente || "Sem nome"}</strong>
+          <p>${os.aparelho || "Aparelho não informado"}</p>
+          <p>Defeito: ${os.defeito || "Não informado"}</p>
+          <p>Status: ${os.status || "Recebido"}</p>
+        `;
+
+        lista.appendChild(item);
+      });
+    },
+    (erro) => {
+      console.error("Erro ao carregar ordens:", erro);
+    }
+  );
+}
