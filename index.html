@@ -1,126 +1,74 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
 
   <title>Oficina do Celular</title>
 
   <link rel="stylesheet" href="style.css">
-
-  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
 
   <header>
     <h1>📱 Oficina do Celular</h1>
-    <p>Controle de ordens de serviço</p>
+    <p>Sistema de Ordens de Serviço</p>
   </header>
 
   <main>
 
     <section class="dashboard">
-
       <div class="card">
+        <span>Total de OS</span>
         <strong id="totalOS">0</strong>
-        <span>Ordens</span>
       </div>
 
       <div class="card">
-        <strong>🔧</strong>
         <span>Em reparo</span>
+        <strong id="reparoOS">0</strong>
       </div>
 
       <div class="card">
-        <strong>✅</strong>
         <span>Prontos</span>
+        <strong id="prontoOS">0</strong>
       </div>
-
     </section>
 
-    <section class="painel">
-
-      <h2>Nova ordem de serviço</h2>
+    <section class="card">
+      <h2 id="tituloForm">Nova ordem de serviço</h2>
 
       <form id="osForm">
 
-        <label>Nome do cliente</label>
-        <input
-          type="text"
-          name="cliente"
-          placeholder="Digite o nome"
-          required
-        >
+        <label>
+          Cliente *
+          <input type="text" name="cliente" required>
+        </label>
 
-        <label>WhatsApp</label>
-        <input
-          type="tel"
-          name="whatsapp"
-          placeholder="(00) 00000-0000"
-        >
+        <label>
+          WhatsApp
+          <input type="tel" name="whatsapp" placeholder="(18) 99999-9999">
+        </label>
 
-        <label>Aparelho</label>
-        <input
-          type="text"
-          name="aparelho"
-          placeholder="Ex.: iPhone 13"
-          required
-        >
+        <label>
+          Aparelho *
+          <input type="text" name="aparelho" placeholder="Ex.: iPhone 13" required>
+        </label>
 
-        <label>IMEI</label>
-        <input
-          type="text"
-          name="imei"
-          placeholder="Digite o IMEI"
-        >
+        <label>
+          IMEI
+          <input type="text" name="imei">
+        </label>
 
-        <label>Defeito relatado</label>
-        <textarea
-          name="defeito"
-          placeholder="Descreva o problema do aparelho"
-          required
-        ></textarea>
+        <label>
+          Defeito relatado *
+          <textarea name="defeito" required></textarea>
+        </label>
 
-        <label>Observações</label>
-        <textarea
-          name="observacoes"
-          placeholder="Estado do aparelho, acessórios etc."
-        ></textarea>
-
-        <label>Valor estimado</label>
-        <input
-          type="number"
-          name="valor"
-          step="0.01"
-          placeholder="R$ 0,00"
-        >
-
-        <button type="submit">
-          💾 Salvar ordem de serviço
-        </button>
-
-      </form>
-
-    </section>
-
-    <section class="painel">
-
-      <h2>Ordens de serviço</h2>
-
-      <div id="listaOS">
-        <p>Nenhuma ordem cadastrada.</p>
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer>
-    <p>Oficina do Celular</p>
-  </footer>
-
-  <script type="module" src="app.js"></script>
-
-</body>
-</html>
+        <label>
+          Observações
+          <textarea name="observacoes"></textarea
+```
