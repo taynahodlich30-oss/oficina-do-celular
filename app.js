@@ -5,13 +5,13 @@ import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTim
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-storage.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCzUSPmNqX1QiNZYbQ_BDJJ12XdATcQ6uM",
-  authDomain: "cha-de-casa-nova-tayna-jean.firebaseapp.com",
-  projectId: "cha-de-casa-nova-tayna-jean",
-  storageBucket: "cha-de-casa-nova-tayna-jean.firebasestorage.app",
-  messagingSenderId: "1037404104306",
-  appId: "1:1037404104306:web:3f4fc49700cfc4b23884eb",
-  measurementId: "G-Z6K343JRJ8"
+  apiKey: "AIzaSyC4CccsFRsOEkEknvASp2OFeaUM15w_VMI",
+  authDomain: "oficina-do-celular-73a69.firebaseapp.com",
+  projectId: "oficina-do-celular-73a69",
+  storageBucket: "oficina-do-celular-73a69.firebasestorage.app",
+  messagingSenderId: "737244059599",
+  appId: "1:737244059599:web:6baf998f0eccc168a864ba",
+  measurementId: "G-KQCV93PPVS"
 };
 
 // Initialize Firebase
