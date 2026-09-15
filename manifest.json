@@ -1,0 +1,10 @@
+{
+  "name": "Oficina do Celular",
+  "short_name": "Oficina do Celular",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f3f4f6",
+  "theme_color": "#111827",
+  "description": "Ordens de serviço da Oficina do Celular",
+  "icons": []
+}
