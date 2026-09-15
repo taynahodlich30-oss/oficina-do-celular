@@ -14,7 +14,7 @@ import {
 
 
 const firebaseConfig = {
-  apiKey: "USER_SHARED_API_KEY",
+  apiKey: "AIzaSyC4CccsFRsOEkEknvASp2OFeaUM15w_VMI",
   authDomain: "oficina-do-celular-73a69.firebaseapp.com",
   projectId: "oficina-do-celular-73a69",
   storageBucket: "oficina-do-celular-73a69.firebasestorage.app",
