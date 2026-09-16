@@ -1,74 +1,60 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111827">
-
-  <title>Oficina do Celular</title>
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel da Assistência - Lojista</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <header>
-    <h1>📱 Oficina do Celular</h1>
-    <p>Sistema de Ordens de Serviço</p>
-  </header>
+    <!-- Tela de Login -->
+    <div id="loginScreen" class="login-container">
+        <div class="card">
+            <h2>Área do Lojista</h2>
+            <p>Digite a senha para acessar o painel</p>
+            <input type="password" id="passwordInput" placeholder="Sua senha de acesso">
+            <button onclick="validarSenha()">Entrar</button>
+            <p id="loginError" class="error-text"></p>
+        </div>
+    </div>
 
-  <main>
+    <!-- Conteúdo do App (Escondido até fazer o login) -->
+    <div id="appScreen" class="app-container" style="display: none;">
+        <header>
+            <h1>Painel de Orçamentos</h1>
+            <button class="btn-logout" onclick="logout()">Sair</button>
+        </header>
 
-    <section class="dashboard">
-      <div class="card">
-        <span>Total de OS</span>
-        <strong id="totalOS">0</strong>
-      </div>
+        <main class="content">
+            <section class="card">
+                <h2>Gerar e Enviar Orçamento</h2>
+                <form id="budgetForm" onsubmit="gerarEEnviarOrcamento(event)">
+                    
+                    <label>Nome do Cliente</label>
+                    <input type="text" id="clientName" placeholder="Ex: João Silva" required>
 
-      <div class="card">
-        <span>Em reparo</span>
-        <strong id="reparoOS">0</strong>
-      </div>
+                    <label>WhatsApp do Cliente (com DDD)</label>
+                    <input type="tel" id="clientPhone" placeholder="Ex: 11999998888" required>
 
-      <div class="card">
-        <span>Prontos</span>
-        <strong id="prontoOS">0</strong>
-      </div>
-    </section>
+                    <label>Modelo do Aparelho</label>
+                    <input type="text" id="deviceModel" placeholder="Ex: iPhone 11 128GB" required>
 
-    <section class="card">
-      <h2 id="tituloForm">Nova ordem de serviço</h2>
+                    <label>Defeito / Serviço a Realizar</label>
+                    <textarea id="serviceDetails" placeholder="Ex: Troca de tela e substituição de bateria" required></textarea>
 
-      <form id="osForm">
+                    <label>Valor Total (R$)</label>
+                    <input type="text" id="totalValue" placeholder="Ex: 350,00" required>
 
-        <label>
-          Cliente *
-          <input type="text" name="cliente" required>
-        </label>
+                    <label>Prazo de Entrega</label>
+                    <input type="text" id="deliveryDeadline" placeholder="Ex: Hoje até 18h ou 2 dias úteis" required>
 
-        <label>
-          WhatsApp
-          <input type="tel" name="whatsapp" placeholder="(18) 99999-9999">
-        </label>
+                    <button type="submit" class="btn-whatsapp">Enviar Orçamento via WhatsApp</button>
+                </form>
+            </section>
+        </main>
+    </div>
 
-        <label>
-          Aparelho *
-          <input type="text" name="aparelho" placeholder="Ex.: iPhone 13" required>
-        </label>
-
-        <label>
-          IMEI
-          <input type="text" name="imei">
-        </label>
-
-        <label>
-          Defeito relatado *
-          <textarea name="defeito" required></textarea>
-        </label>
-
-        <label>
-          Observações
-          <textarea name="observacoes"></textarea
-```
+    <script src="script.js"></script>
+</body>
+</html>
